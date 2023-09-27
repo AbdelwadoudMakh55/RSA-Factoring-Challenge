@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <inttypes.h>
 /**
  * main - Returns the 2 factors of a number.
  * @argc : Number of args.
@@ -9,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	int line_number = 0, i, j, a, b;
+	unsigned long long line_number = 0, i, j, a, b;
 	FILE *file;
 	char **arr_lines;
 
@@ -30,13 +31,13 @@ int main(int argc, char **argv)
 	for (j = 0; j < line_number; j++)
 	{
 		arr_lines[j][strlen(arr_lines[j]) - 1] = '\0';
-		for (i = 2; i < atoi(arr_lines[j]); i++)
+		for (i = 2; i < atoll(arr_lines[j]); i++)
 		{
-			if (atoi(arr_lines[j]) % i == 0)
+			if (atoll(arr_lines[j]) % i == 0)
 			{
 				a = i;
-				b = atoi(arr_lines[j]) / i;
-				printf("%d=%d*%d\n", atoi(arr_lines[j]), a, b);
+				b = atoll(arr_lines[j]) / i;
+				printf("%llu=%llu*%llu\n", atoll(arr_lines[j]), b, a);
 				break;
 			}
 		}
