@@ -6,4 +6,6 @@ dist
 factors.c
 factors.py
 factors.spec
-test00.txt
+rsa.spec
+rsa.py
+test00
